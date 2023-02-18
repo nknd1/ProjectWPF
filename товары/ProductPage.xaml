@@ -1,0 +1,49 @@
+﻿<Page x:Class="товары.ProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:товары"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="900"
+      Title="ProductPage">
+
+    <Grid Background="#FFEAF0F5">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="332" ></ColumnDefinition>
+            <ColumnDefinition Width="330"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="324"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Width="100" Height="40" Click="MoveToStart" Background="#FF546DD6" Foreground="White" Grid.Column="1" Grid.Row="0">Главный экран</Button>
+        <Button Width="200" Height="40" Click="MoveToAddCategory" Background="#FF546DD6" Foreground="White" Grid.Column="2" Grid.Row="0">Добавить категорию</Button>
+
+        <StackPanel x:Name="spAddProduct" Grid.Column="2" Grid.Row="1" >
+
+            <Label FontSize="15" Foreground="IndianRed" Margin="11 0 0 0">Название</Label>
+            <TextBox Name="tbName" Text="{Binding Название}"  Width="310" HorizontalAlignment="Left" Margin="11 0 0 0"></TextBox>
+            <Label FontSize="15" Foreground="IndianRed" Margin="11 0 0 0">Категория</Label>
+            <ComboBox Name="cbCategoryName"  Width="310" HorizontalAlignment="Left" Margin="11 0 0 0"/>
+            <Label FontSize="15" Foreground="IndianRed" Margin="11 0 0 0">Цена</Label>
+            <TextBox Name="tbPriceName" Text="{Binding Цена}" Width="310" HorizontalAlignment="Left" Margin="11 0 0 0"></TextBox>
+            <Label FontSize="15" Foreground="IndianRed" Margin="11 0 0 0">Количество</Label>
+            <TextBox Name="tbCountName" Text="{Binding Количество}" Width="310" HorizontalAlignment="Left" Margin="11 0 0 0"></TextBox>
+            <Label FontSize="15" Foreground="IndianRed" Margin="11 0 0 0">Размер</Label>
+            <TextBox Name="tbSizeName" Text="{Binding Размер}" Width="310" HorizontalAlignment="Left" Margin="11 0 0 0"></TextBox>
+            <Button FontSize="15" Click="Button_Click" Width="200" Margin="11 55 0 0" Background="#FF546DD6" Foreground="White">Добавить</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="3" >
+            <Label FontSize="15" Foreground="IndianRed" Margin="11 0 0 0">Добавить картинку</Label>
+            <Image x:Name="ImagePreview" Height="265" Width="300"></Image>
+            <Button Click="Button_Click_1"  FontSize="15" Width="200" Margin="11 5 11 0" Background="#FF546DD6" Foreground="White">Загрузить</Button>
+        </StackPanel>
+    </Grid>
+</Page>
