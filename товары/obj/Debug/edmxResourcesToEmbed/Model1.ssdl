@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище user9Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Категория">
+    <Key>
+      <PropertyRef Name="Название" />
+    </Key>
+    <Property Name="Название" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Товар">
+    <Key>
+      <PropertyRef Name="Название" />
+    </Key>
+    <Property Name="Название" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Категория" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Цена" Type="money" Nullable="false" />
+    <Property Name="Количество" Type="int" Nullable="false" />
+    <Property Name="Размер" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="image" Type="image" />
+  </EntityType>
+  <Association Name="FK_Товар_Категория">
+    <End Role="Категория" Type="Self.Категория" Multiplicity="1" />
+    <End Role="Товар" Type="Self.Товар" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Категория">
+        <PropertyRef Name="Название" />
+      </Principal>
+      <Dependent Role="Товар">
+        <PropertyRef Name="Категория" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище user9ModelContainer">
+    <EntitySet Name="Категория" EntityType="Self.Категория" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Товар" EntityType="Self.Товар" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Товар_Категория" Association="Self.FK_Товар_Категория">
+      <End Role="Категория" EntitySet="Категория" />
+      <End Role="Товар" EntitySet="Товар" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище user9ModelContainer" CdmEntityContainer="connection">
+    <EntitySetMapping Name="Категория">
+      <EntityTypeMapping TypeName="user9Model.Категория">
+        <MappingFragment StoreEntitySet="Категория">
+          <ScalarProperty Name="Название" ColumnName="Название" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Товар">
+      <EntityTypeMapping TypeName="user9Model.Товар">
+        <MappingFragment StoreEntitySet="Товар">
+          <ScalarProperty Name="Количество" ColumnName="Количество" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="Категория" ColumnName="Категория" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+          <ScalarProperty Name="Размер" ColumnName="Размер" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
